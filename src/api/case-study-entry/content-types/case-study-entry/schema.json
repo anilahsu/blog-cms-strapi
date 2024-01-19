@@ -12,19 +12,19 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Key": {
+    "key": {
       "type": "uid"
     },
-    "Path": {
+    "path": {
       "type": "string"
     },
-    "Company_name": {
+    "company_name": {
       "type": "string"
     },
-    "Money_name": {
+    "money_name": {
       "type": "string"
     },
-    "CoverImage": {
+    "cover_image": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -35,10 +35,10 @@
         "audios"
       ]
     },
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "MoneyImage": {
+    "card_image": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -49,26 +49,27 @@
         "audios"
       ]
     },
-    "URL": {
+    "url": {
       "type": "string"
     },
-    "Induction": {
+    "description": {
       "type": "richtext"
     },
-    "AppealPointList": {
+    "appeal_points": {
       "type": "component",
       "repeatable": true,
       "component": "case-study.appeal-point"
     },
-    "InterviewBlock": {
+    "interview": {
       "type": "component",
       "repeatable": false,
-      "component": "case-study.interview"
+      "component": "case-study.interviewee"
     },
     "case_study_sub_categories": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::case-study-sub-category.case-study-sub-category"
+      "relation": "manyToMany",
+      "target": "api::case-study-sub-category.case-study-sub-category",
+      "mappedBy": "case_study_entries"
     }
   }
 }

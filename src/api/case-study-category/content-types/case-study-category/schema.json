@@ -12,16 +12,16 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Key": {
+    "key": {
       "type": "uid"
     },
-    "Path": {
+    "path": {
       "type": "string"
     },
-    "Name": {
+    "name": {
       "type": "string"
     },
-    "Other": {
+    "other": {
       "type": "integer"
     },
     "case_study_sub_categories": {

@@ -781,10 +781,10 @@ export interface ApiCaseStudyCategoryCaseStudyCategory
     draftAndPublish: true;
   };
   attributes: {
-    Key: Attribute.UID;
-    Path: Attribute.String;
-    Name: Attribute.String;
-    Other: Attribute.Integer;
+    key: Attribute.UID;
+    path: Attribute.String;
+    name: Attribute.String;
+    other: Attribute.Integer;
     case_study_sub_categories: Attribute.Relation<
       'api::case-study-category.case-study-category',
       'oneToMany',
@@ -820,20 +820,20 @@ export interface ApiCaseStudyEntryCaseStudyEntry extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Key: Attribute.UID;
-    Path: Attribute.String;
-    Company_name: Attribute.String;
-    Money_name: Attribute.String;
-    CoverImage: Attribute.Media;
-    Title: Attribute.String;
-    MoneyImage: Attribute.Media;
-    URL: Attribute.String;
-    Induction: Attribute.RichText;
-    AppealPointList: Attribute.Component<'case-study.appeal-point', true>;
-    InterviewBlock: Attribute.Component<'case-study.interview'>;
+    key: Attribute.UID;
+    path: Attribute.String;
+    company_name: Attribute.String;
+    money_name: Attribute.String;
+    cover_image: Attribute.Media;
+    title: Attribute.String;
+    card_image: Attribute.Media;
+    url: Attribute.String;
+    description: Attribute.RichText;
+    appeal_points: Attribute.Component<'case-study.appeal-point', true>;
+    interview: Attribute.Component<'case-study.interviewee'>;
     case_study_sub_categories: Attribute.Relation<
       'api::case-study-entry.case-study-entry',
-      'oneToMany',
+      'manyToMany',
       'api::case-study-sub-category.case-study-sub-category'
     >;
     createdAt: Attribute.DateTime;
@@ -867,10 +867,15 @@ export interface ApiCaseStudySubCategoryCaseStudySubCategory
     draftAndPublish: true;
   };
   attributes: {
-    Key: Attribute.UID;
-    Path: Attribute.String;
-    Name: Attribute.String;
-    Other: Attribute.Integer;
+    key: Attribute.UID;
+    path: Attribute.String;
+    name: Attribute.String;
+    other: Attribute.Integer;
+    case_study_entries: Attribute.Relation<
+      'api::case-study-sub-category.case-study-sub-category',
+      'manyToMany',
+      'api::case-study-entry.case-study-entry'
+    >;
     case_study_category: Attribute.Relation<
       'api::case-study-sub-category.case-study-sub-category',
       'manyToOne',
