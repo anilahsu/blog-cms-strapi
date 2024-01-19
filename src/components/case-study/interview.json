@@ -1,36 +1,16 @@
 {
-  "collectionName": "components_case_study_interviews",
+  "collectionName": "components_case_study_q_and_as",
   "info": {
     "displayName": "interview",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "name": {
+    "question": {
       "type": "string"
     },
-    "position": {
-      "type": "string"
-    },
-    "avatar": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "career": {
-      "type": "text"
-    },
-    "QAList": {
-      "displayName": "Q&A",
-      "type": "component",
-      "repeatable": true,
-      "component": "case-study.q-and-a"
+    "answer": {
+      "type": "richtext"
     }
   }
 }

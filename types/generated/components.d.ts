@@ -7,30 +7,15 @@ export interface CaseStudyAppealPoint extends Schema.Component {
     description: '';
   };
   attributes: {
-    AppealTitle: Attribute.String;
-    AppealDesctiption: Attribute.Text;
+    title: Attribute.String;
+    Description: Attribute.RichText;
   };
 }
 
 export interface CaseStudyInterview extends Schema.Component {
-  collectionName: 'components_case_study_interviews';
-  info: {
-    displayName: 'interview';
-    description: '';
-  };
-  attributes: {
-    name: Attribute.String;
-    position: Attribute.String;
-    avatar: Attribute.Media;
-    career: Attribute.Text;
-    QAList: Attribute.Component<'case-study.q-and-a', true>;
-  };
-}
-
-export interface CaseStudyQAndA extends Schema.Component {
   collectionName: 'components_case_study_q_and_as';
   info: {
-    displayName: 'Q&A';
+    displayName: 'interview';
     description: '';
   };
   attributes: {
@@ -39,12 +24,27 @@ export interface CaseStudyQAndA extends Schema.Component {
   };
 }
 
+export interface CaseStudyInterviewee extends Schema.Component {
+  collectionName: 'components_case_study_interviews';
+  info: {
+    displayName: 'interviewee';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+    position: Attribute.String;
+    picture: Attribute.Media;
+    career: Attribute.Text;
+    questions: Attribute.Component<'case-study.interview', true>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'case-study.appeal-point': CaseStudyAppealPoint;
       'case-study.interview': CaseStudyInterview;
-      'case-study.q-and-a': CaseStudyQAndA;
+      'case-study.interviewee': CaseStudyInterviewee;
     }
   }
 }

@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_case_study_interviews",
+  "info": {
+    "displayName": "interviewee",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "career": {
+      "type": "text"
+    },
+    "questions": {
+      "displayName": "Q&A",
+      "type": "component",
+      "repeatable": true,
+      "component": "case-study.interview"
+    }
+  }
+}

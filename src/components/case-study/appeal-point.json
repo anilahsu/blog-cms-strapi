@@ -6,11 +6,11 @@
   },
   "options": {},
   "attributes": {
-    "AppealTitle": {
+    "title": {
       "type": "string"
     },
-    "AppealDesctiption": {
-      "type": "text"
+    "Description": {
+      "type": "richtext"
     }
   }
 }
